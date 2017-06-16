@@ -7,7 +7,7 @@ pwr$Date <- strptime(pwr$Date, format = "%d/%m/%Y")
 #Subset for only 2 days of February
 pwr_dates <- subset(pwr, pwr$Date %in% c("2007-02-01","2007-02-02"))
 
-#Attach combined 'DateTime' column
+#Create a 'DateTime' column combining 'Date' and 'Time' columns
 powers <- cbind(pwr_dates,as.POSIXct(paste(pwr_dates$Date, pwr_dates$Time), format="%Y-%m-%d %H:%M:%S"))
 colnames(powers)[10] <- "DateTime"
 

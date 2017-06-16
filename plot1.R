@@ -7,7 +7,7 @@ pwr$Date <- strptime(pwr$Date, format = "%d/%m/%Y")
 #Subset for only 2 days of February
 pwr_dates <- subset(pwr, pwr$Date %in% c("2007-02-01","2007-02-02"))
 
-#Plot graph on screen
+#Plot histogram on screen
 with(pwr_dates, hist(Global_active_power, xlab = "Global Active Power (kilowatts)", main = "Global Active Power", col = "red"))
 
 #Copy plot to png file
